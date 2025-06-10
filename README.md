@@ -46,7 +46,40 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ## 🚀 Cara Menjalankan
 
-Buka file `.ipynb` ini di Jupyter Notebook atau Google Colab dan jalankan cell secara berurutan.
+### 🧪 Opsi 1: Jalankan di Google Colab atau Jupyter Notebook
+
+1. Buka file `.ipynb` (notebook) menggunakan:
+   - [Google Colab](https://colab.research.google.com/)  
+     atau
+   - Jupyter Notebook (dari Anaconda atau `jupyter notebook` CLI)
+
+2. Jalankan cell secara berurutan dari atas ke bawah.
+
+> Pastikan runtime sudah diaktifkan dan dependensi sudah terinstall.
+
+---
+
+### 💻 Opsi 2: Jalankan di Visual Studio Code (VS Code)
+
+1. **Install Python extension** di VS Code (jika belum ada).
+2. Buka folder proyek yang berisi file `.ipynb`.
+3. Klik file notebook `.ipynb` untuk membukanya.
+4. Akan muncul tombol ▶️ (Run Cell) di setiap cell.
+5. Jalankan cell satu per satu dari atas ke bawah.
+
+> Jika VS Code tidak mengenali Python environment, pastikan kamu sudah menginstall Python dan environment-nya telah terdeteksi (`Ctrl+Shift+P` → “Python: Select Interpreter”).
+
+---
+
+### ⚙️ Jika notebook butuh environment tambahan
+
+Buat virtual environment dan install dependensi:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # atau venv\Scripts\activate di Windows
+pip install -r requirements.txt
+```
 
 ## 📝 Catatan
 

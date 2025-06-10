@@ -34,8 +34,9 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ## 📈 Hasil Pelatihan
 
-- **Training Accuracy**: 82.84%
-- **Validation Accuracy**: 89.81%
+- **Training Accuracy**: 93.14%
+- **Validation Accuracy**: 94.21%
+- **Test Accuracy**: 94.91%
 
 ## 📁 Struktur Output
 

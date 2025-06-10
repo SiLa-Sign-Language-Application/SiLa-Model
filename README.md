@@ -1,4 +1,4 @@
-# ✋ SiLa Gesture Recognition Model
+# SiLa Gesture Recognition Model
 
 Notebook ini berisi proses pembuatan dan pelatihan model gesture recognition untuk **Bahasa Isyarat Indonesia (SIBI)** menggunakan MediaPipe dan TensorFlow.
 

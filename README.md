@@ -7,6 +7,13 @@ Notebook ini berisi proses pembuatan dan pelatihan model gesture recognition unt
 ### Load data dari Google Drive
 Dataset berupa file CSV yang berisi koordinat landmark tangan dikumpulkan sebelumnya dan disimpan di Google Drive. Notebook ini menggunakan integrasi `drive.mount()` untuk mengakses folder tersebut dan memuat seluruh file CSV secara otomatis.
 
+💻 Untuk Lokal:
+
+Jika kamu menjalankan di lokal, gunakan path ke folder dataset/ yang sudah ada:
+```bash
+folder_path = './dataset'
+```
+
 ### Merge Data
 Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung menjadi satu DataFrame besar menggunakan `pandas.concat()`. Hasilnya disimpan sebagai `dataset_all.csv` yang menjadi basis data untuk pelatihan model.
 

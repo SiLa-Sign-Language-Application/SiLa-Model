@@ -6,7 +6,8 @@ Script ini digunakan untuk merekam data koordinat landmark tangan menggunakan we
 
 ```bash
 .
-├── collect_landmark_data.py
+├── collect_landmark.py
+├── requirements.txt
 ├── dataset/
 │   └── [gesture_label].csv
 ```
@@ -16,7 +17,7 @@ Script ini digunakan untuk merekam data koordinat landmark tangan menggunakan we
 Pastikan Python sudah terinstal, lalu install dependencies berikut:
 
 ```bash
-pip install opencv-python mediapipe pandas
+pip install -r requirements.txt
 ```
 
 ## 🚀 Cara Menjalankan

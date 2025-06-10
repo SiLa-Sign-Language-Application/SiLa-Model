@@ -42,7 +42,7 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ```bash
 ├── gesture_mlp_model.h5       # Model hasil pelatihan
-├── label_encoder.pkl          # Encoder label gesture
+├── label.json          # Encoder label gesture
 ```
 
 ## 🚀 Cara Menjalankan

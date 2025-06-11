@@ -1,8 +1,36 @@
 # SiLa Gesture Recognition Model
 
-Notebook ini berisi proses pembuatan dan pelatihan model gesture recognition untuk **Bahasa Isyarat Indonesia (SIBI)** menggunakan MediaPipe dan TensorFlow.
+Sila_Model adalah berbagai file yang berisi proses pembuatan data landmark, membuat model dan pelatihan model gesture recognition untuk **Bahasa Isyarat Indonesia (SIBI)** menggunakan MediaPipe dan TensorFlow.
 
-## 📚 Deskripsi Notebook
+## 📁 Struktur File
+
+```bash
+├── collect_landmark/                 # Folder untuk skrip pengumpulan data
+├── dataset/                          # Folder untuk menyimpan dataset mentah atau hasil ekstrak
+│   └── [gesture_label].csv           # Folder isi CSV per gesture
+├── model/                            # Folder untuk menyimpan model dan label
+│   ├── gesture_mlp_model.h5         # ✅ Model hasil pelatihan (akan dihasilkan setelah training)
+│   └── label.json                   # ✅ Label encoder hasil training
+    └── test.py                      # Melakukan pengetesan hasil model sebelum dideploy ke backend   
+├── dataset_all.csv                  # Dataset gabungan hasil merge semua CSV
+├── sila_model.py                    # Skrip utama untuk training model
+├── SiLa_Model.ipynb                 # Notebook versi Colab
+├── requirements.txt                 # Daftar dependensi Python
+├── README.md                        # Dokumentasi proyek
+
+```
+Berikut adalah penjelasan singkat terkait penggunaan setiap file
+
+## ✋ collect_landmark
+Folder collect_landmark berisi script untuk mengumpulkan data gesture tangan secara real-time menggunakan webcam dan MediaPipe Hands. Data yang dikumpulkan berupa koordinat 21 titik landmark tangan (x, y) dan disimpan dalam format CSV.
+
+## 📁 Dataset
+Folder dataset berisi kumpulan file CSV hasil perekaman gesture tangan menggunakan script dari folder collect_landmark. Setiap file merepresentasikan satu label gesture, misalnya huruf A–Z atau gesture spesial seperti spasi (space).
+
+## 🧠 Model
+Folder model/ digunakan untuk menyimpan semua file penting terkait model Machine Learning hasil pelatihan. File gesture_mlp_model.h5 merupakan model MLP yang telah dilatih untuk mengenali gesture tangan berdasarkan 42 koordinat landmark (x dan y dari 21 titik), dan digunakan dalam proses inferensi di backend. File label.json berisi mapping label karakter gesture ke indeks numerik yang diperlukan untuk interpretasi output model secara akurat. Selain itu, terdapat test.py, yaitu skrip pengujian lokal yang digunakan untuk memastikan model dan label bekerja dengan benar sebelum diintegrasikan ke dalam API FastAPI.
+
+## 📚 SiLa_Model.ipynb / sila_model.py 
 
 ### Load data dari Google Drive
 Dataset berupa file CSV yang berisi koordinat landmark tangan dikumpulkan sebelumnya dan disimpan di Google Drive. Notebook ini menggunakan integrasi `drive.mount()` untuk mengakses folder tersebut dan memuat seluruh file CSV secara otomatis.
@@ -34,9 +62,9 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ## 📈 Hasil Pelatihan
 
-- **Training Accuracy**: 93.14%
-- **Validation Accuracy**: 94.21%
-- **Test Accuracy**: 94.91%
+- **Training Accuracy**: 91.12%
+- **Validation Accuracy**: 93.98%
+- **Test Accuracy**: 93.33%
 
 ## 📁 Struktur Output
 

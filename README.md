@@ -11,7 +11,7 @@ Dataset berupa file CSV yang berisi koordinat landmark tangan dikumpulkan sebelu
 
 Jika kamu menjalankan di lokal, gunakan path ke folder dataset/ yang sudah ada:
 ```bash
-folder_path = './dataset'
+folder_path = 'dataset'
 ```
 
 ### Merge Data

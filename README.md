@@ -2,6 +2,8 @@
 
 Sila_Model adalah berbagai file yang berisi proses pembuatan data landmark, membuat model dan pelatihan model gesture recognition untuk **Bahasa Isyarat Indonesia (SIBI)** menggunakan MediaPipe dan TensorFlow.
 
+Link Dataset : https://www.kaggle.com/datasets/andresaputraginting/gesturesibi
+
 ## 📁 Struktur File
 
 ```bash

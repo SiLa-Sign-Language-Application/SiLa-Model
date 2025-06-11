@@ -54,11 +54,66 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ## 🧪 Langkah-Langkah Utama
 
-1. Load dataset hasil ekstraksi koordinat landmark tangan.
-2. Preprocessing data: normalisasi, encoding label.
-3. Bangun model: MLP.
-4. Training model dan evaluasi.
-5. Simpan model ke format `.h5` untuk deployment.
+Berikut versi terbaru dari **🚀 Project Pipeline** dengan **proses penggabungan data (merge CSV)** dipisahkan sebagai langkah tersendiri setelah data collection:
+
+---
+
+## 🚀 Project Pipeline
+
+### 1. Data Collection *(done via script, not in notebook)*
+
+Gesture tangan huruf A–Z dan spasi direkam secara real-time menggunakan webcam melalui script `collect_landmark_data.py`.
+Setiap sampel menghasilkan 42 nilai (x dan y dari 21 titik landmark) yang disimpan dalam file CSV sesuai labelnya (contoh: `A.csv`, `B.csv`, `space.csv`).
+
+---
+
+### 2. Data Merging
+
+Seluruh file CSV hasil perekaman dikumpulkan dan digabungkan menggunakan fungsi `combine_all_csv()` dalam script Python.
+Data digabung menjadi satu file utama `dataset_all.csv` yang menjadi input utama untuk proses pelatihan model.
+
+---
+
+### 3. Data Preprocessing
+Setelah dilakukan merge data, dilanjutkan dengan melalukan preprocessing data.
+Langkah preprocessing meliputi:
+
+* Pengecekan dan pembersihan missing values dan duplikat
+* Label encoding untuk gesture (A–Z dan spasi)
+* Normalisasi fitur agar model lebih stabil
+  Dataset kemudian dibagi menjadi data latih dan uji (80:20) secara stratifikasi.
+
+---
+
+### 4. Model Training
+
+Model dilatih menggunakan arsitektur **Multi-Layer Perceptron (MLP)**:
+
+* 2 hidden layer: 512 & 256 neuron, aktivasi ReLU + Dropout
+* Output layer: Softmax
+  Model dilatih selama 50 epoch dan divalidasi menggunakan 20% data latih.
+
+---
+
+### 5. Model Evaluation
+
+Model dievaluasi pada data uji menggunakan metrik akurasi, loss, dan confusion matrix.
+Visualisasi performa dilihat melalui grafik training vs. validation accuracy dan loss.
+
+---
+
+### 6. Model Saving
+
+Model disimpan dalam format `.h5` (`gesture_mlp_model.h5`), dan label mapping disimpan sebagai `label.json`.
+Keduanya disimpan di folder `model/` untuk kebutuhan deployment.
+
+---
+
+### 7. Model Testing
+
+Sebelum digunakan dalam backend, dilakukan pengujian lokal melalui script `test.py` di folder `model/` untuk memastikan model dan label encoder bekerja dengan baik.
+
+---
 
 ## 📈 Hasil Pelatihan
 

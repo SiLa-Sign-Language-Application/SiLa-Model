@@ -25,7 +25,7 @@ pip install -r requirements.txt
 Untuk merekam gesture tertentu (contoh: "space"):
 
 ```bash
-python collect_landmark_data.py
+python collect_landmark.py
 ```
 
 Atau modifikasi baris terakhir file:

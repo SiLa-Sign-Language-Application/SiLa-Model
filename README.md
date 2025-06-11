@@ -59,10 +59,9 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 Gesture tangan huruf A–Z dan spasi direkam secara real-time menggunakan webcam melalui script `collect_landmark_data.py`.
 Setiap sampel menghasilkan 42 nilai (x dan y dari 21 titik landmark) yang disimpan dalam file CSV sesuai labelnya (contoh: `A.csv`, `B.csv`, `space.csv`).
 
-### 2. Data Merging
+### 2. Load & Merge Data
 
-Seluruh file CSV hasil perekaman dikumpulkan dan digabungkan menggunakan fungsi `combine_all_csv()` dalam script Python.
-Data digabung menjadi satu file utama `dataset_all.csv` yang menjadi input utama untuk proses pelatihan model.
+Setelah proses perekaman gesture selesai, seluruh file CSV hasil perekaman (misalnya `A.csv`, `B.csv`, `space.csv`) dimuat dan digabung menggunakan fungsi `combine_all_csv()` dari script Python. Fungsi ini membaca semua file di dalam folder `dataset/`, menggabungkannya menjadi satu DataFrame besar, lalu menyimpannya ke dalam file utama `dataset_all.csv`. File inilah yang akan digunakan sebagai input untuk proses preprocessing dan pelatihan model Machine Learning.
 
 ### 3. Data Preprocessing
 Setelah dilakukan merge data, dilanjutkan dengan melalukan preprocessing data.

@@ -54,13 +54,7 @@ Setiap file CSV merepresentasikan satu gesture tertentu. Semua file digabung men
 
 ## 🧪 Langkah-Langkah Utama
 
-Berikut versi terbaru dari **🚀 Project Pipeline** dengan **proses penggabungan data (merge CSV)** dipisahkan sebagai langkah tersendiri setelah data collection:
-
----
-
-## 🚀 Project Pipeline
-
-### 1. Data Collection *(done via script, not in notebook)*
+### 1. Data Collection *(Dilakukan pada folder `collect_landmark_data.py`)*
 
 Gesture tangan huruf A–Z dan spasi direkam secara real-time menggunakan webcam melalui script `collect_landmark_data.py`.
 Setiap sampel menghasilkan 42 nilai (x dan y dari 21 titik landmark) yang disimpan dalam file CSV sesuai labelnya (contoh: `A.csv`, `B.csv`, `space.csv`).

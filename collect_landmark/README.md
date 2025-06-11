@@ -1,6 +1,6 @@
 # 🖐️ Landmark Data Collection with MediaPipe
 
-File ini digunakan untuk merekam data koordinat landmark tangan menggunakan webcam dan MediaPipe Hands, kemudian menyimpannya sebagai file CSV untuk keperluan pelatihan model machine learning seperti gesture recognition.
+`collect_landmark.py` digunakan untuk merekam data koordinat landmark tangan menggunakan webcam dan MediaPipe Hands, kemudian menyimpannya sebagai file CSV untuk keperluan pelatihan model machine learning seperti gesture recognition.
 
 ## 📁 Struktur File
 

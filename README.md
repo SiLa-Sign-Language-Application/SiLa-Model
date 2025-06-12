@@ -35,7 +35,7 @@ Folder model/ digunakan untuk menyimpan semua file penting terkait model Machine
 ## 📚 SiLa_Model.ipynb / sila_model.py 
 
 ### Load data dari Google Drive
-Dataset berupa file CSV yang berisi koordinat landmark tangan dikumpulkan sebelumnya dan disimpan di Google Drive. Notebook ini menggunakan integrasi `drive.mount()` untuk mengakses folder tersebut dan memuat seluruh file CSV secara otomatis.
+Dataset berupa file ZIP yang berisi beberapa file CSV dengan koordinat landmark tangan yang telah dikumpulkan sebelumnya dan disimpan di Google Drive. Notebook ini menggunakan pustaka gdown untuk mengunduh file ZIP tersebut secara langsung melalui link berbasis file ID, kemudian mengekstraknya ke folder lokal dan memuat seluruh file CSV secara otomatis untuk proses selanjutnya.
 
 💻 Untuk Lokal:
 
